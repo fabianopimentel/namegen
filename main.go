@@ -2,18 +2,16 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
+	"log"
 
-	"github.com/fabianopimentel/namegen/dictionaries"
+	"github.com/fabianopimentel/namegen/internal/generator"
 )
 
 func main() {
-	source := rand.NewSource(time.Now().UnixNano())
-	rng := rand.New(source)
+	name, err := generator.GenerateName()
+	if err != nil {
+		log.Fatalf("Erro ao gerar nome: %v", err)
+	}
 
-	adjectivesIndex := rng.Intn(len(dictionaries.Adjectives))
-	nameIndex := rng.Intn(len(dictionaries.Names))
-
-	fmt.Printf("%s-%s\n", dictionaries.Adjectives[adjectivesIndex], dictionaries.Names[nameIndex])
+	fmt.Println(name)
 }
