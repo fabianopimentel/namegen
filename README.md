@@ -12,11 +12,21 @@ It's as easy as snapping your fingers! Simply run our magical command, and voil√
 
 ## Getting Started
 
-1. Install `namegen` using Go: `go install github.com/fabiano.pimentel/namegen`
+1. Build `namegen` from the source:
 
-2. Fire up your terminal and type `namegen`
+```sh
+go build .
+```
 
-3. Brace yourself for a dose of hilarity as your name is revealed!
+2. Move `namegen` binary to `$HOME/.local/bin`:
+
+```sh
+mv namegen $HOME/local/bin`
+```
+
+3. Fire up your terminal and type `namegen`
+
+4. Brace yourself for a dose of hilarity as your name is revealed!
 
 ## Contributing
 
